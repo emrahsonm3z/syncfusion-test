@@ -1,0 +1,5 @@
+@import 'colors.css';
+
+:root {
+  --primary: var(--c-blue-800);
+}

@@ -1,0 +1,256 @@
+@import 'variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+html {
+  font-size: 16px;
+  margin-right: 0 !important;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  background-color: var(--c-gray-100);
+  color: var(--c-text-color);
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 1.75;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--link-hover);
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p,
+span,
+label,
+input,
+textarea,
+select,
+li,
+small,
+button {
+  --min-fs: 0.75;
+  --max-fs: 1;
+  --min-vw: 20;
+  --max-vw: 75;
+  --min-fs-rem: var(--min-fs) * 1rem;
+  --max-fs-rem: var(--max-fs) * 1rem;
+  --min-vw-rem: var(--min-vw) * 1rem;
+  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) /
+    (var(--max-vw) - var(--min-vw));
+
+  font-size: clamp(
+    var(--min-fs-rem),
+    var(--min-fs-rem) + var(--slope),
+    var(--max-fs-rem)
+  );
+  letter-spacing: 0.05rem;
+}
+
+a,
+span,
+label,
+p,
+li {
+  --min-fs: 0.75;
+  --max-fs: 1;
+}
+
+small,
+.font-size-sm {
+  --min-fs: 0.75;
+  --max-fs: 0.8;
+}
+
+b {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+input,
+textarea,
+select,
+button {
+  --min-fs: 0.9;
+  --max-fs: 0.8;
+}
+
+h1,
+.font-size-h1 {
+  --min-fs: 3.15 * 0.75;
+  --max-fs: 3.15;
+
+  line-height: 1.3;
+}
+
+h2,
+.font-size-h2 {
+  --min-fs: 2.36 * 0.75;
+  --max-fs: 2.36;
+
+  line-height: 1.3;
+}
+
+h3,
+.font-size-h3 {
+  --min-fs: 1.77 * 0.75;
+  --max-fs: 1.77;
+
+  line-height: 1.5;
+}
+
+h4,
+.font-size-h4 {
+  --min-fs: 1.33 * 0.75;
+  --max-fs: 1.33;
+}
+
+h5,
+.font-size-h5 {
+  --min-fs: 1.15 * 0.75;
+  --max-fs: 1.15;
+}
+
+i {
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.svg-icon {
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+
+    g [fill] {
+      transition: fill 0.3s ease;
+      fill: #b5b5c3;
+    }
+
+    &:hover {
+      transition: fill 0.3s ease;
+    }
+  }
+
+  &.svg-icon-white {
+    svg {
+      g [fill] {
+        transition: fill 0.3s ease;
+        fill: #fff !important;
+      }
+
+      &:hover {
+        transition: fill 0.3s ease;
+      }
+    }
+  }
+
+  &.svg-icon-primary {
+    svg {
+      g [fill] {
+        transition: fill 0.3s ease;
+        fill: var(--primary) !important;
+      }
+
+      &:hover {
+        transition: fill 0.3s ease;
+      }
+    }
+  }
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+main {
+  display: grid;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.fluid {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex: 1 0 0;
+  }
+}
+
+.container {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
